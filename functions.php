@@ -80,7 +80,7 @@ add_action('wp_enqueue_scripts', 'pointcom_carregando_scripts');
 
 function ti_custom_javascript()
 {
-    if (is_home() || is_front_page()) {
+    if (is_home() || is_front_page() || is_page("en")) {
 ?>
         <style>
             .contact-details:before {
