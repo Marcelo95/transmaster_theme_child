@@ -884,6 +884,18 @@ ul.pager {
     background: none;
 }
 
+.post .post-content p {
+    margin-bottom: 20px;
+    color: #888;
+    font-family: "Raleway", sans-serif;
+    text-align: left;
+    line-height: 24px;
+}
+
+body.single span.breadcrumb-current, p.breadcrubms span:last-child span {
+    color: #fff !important;
+}
+
 @media (min-width: 768px) {
     .services-list li:nth-child(1) {
         border-right: 1px solid #eee;

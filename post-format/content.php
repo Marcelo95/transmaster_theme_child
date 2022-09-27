@@ -52,7 +52,7 @@ $nt_amaze_show_standart_social_icons 	= rwmb_meta('nt_amaze_show_standart_social
 
 							<?php
 							if (is_single()) :
-								the_title(sprintf('<h3><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>');
+								the_title('<h3>', '</h3>');
 
 							?>
 
