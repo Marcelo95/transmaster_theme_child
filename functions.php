@@ -237,3 +237,27 @@ function my_categories($language = "pt-BR")
 <?php
 
 }
+
+add_action('my_custom_html_right', 'my_custom_html_right', 10, 2);
+
+function my_custom_html_right($language="pt-BR")
+{
+?>
+
+        <div class="col-md-3">
+            <div id="widget-area" class="  margin-b-40">
+
+                <div class="box-right">
+                    <?php do_action('my_form_search', $language); ?>
+                    <br>
+                    <?php do_action('my_posts_recents', $language); ?>
+                    <?php do_action('my_categories', $language); ?>
+                </div>
+                <?php if (is_active_sidebar('sidebar-english')) : ?>
+                    <?php //dynamic_sidebar('sidebar-english'); 
+                    ?>
+                <?php endif; ?>
+            </div><!-- .widget-area -->
+        </div>
+<?php
+}

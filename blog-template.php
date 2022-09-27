@@ -77,6 +77,13 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 }
 
 
+$language = 'pt-BR';
+
+if($parent_slug === 'en'){
+    $language = 'en';
+}
+
+
 
 
 ?>
@@ -162,40 +169,12 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                             <?php if (ot_get_option('nt_amaze_bloglayout') == 'right-sidebar' || ot_get_option('nt_amaze_bloglayout') == '') { 
                                 
-                                    $language = 'pt-BR';
-
-                                    if($parent_slug === 'en'){
-                                        $language = 'en';
-                                    }
+                          
+                                    do_action('my_custom_html_right', $language);
 
                                 ?>
 
-                                <div class="col-md-3">
-
-
-
-                                    <div id="widget-area" class="  margin-b-40">
-
-                                        <div class="box-right">
-                                            <?php do_action('my_form_search', $language); ?>
-                                            <br>
-                                            <?php do_action('my_posts_recents', $language); ?>
-                                            <?php do_action('my_categories', $language); ?>
-                                        </div>
-
-
-
-                                        <?php if (is_active_sidebar('sidebar-english')) : ?>
-                                            <?php //dynamic_sidebar('sidebar-english'); 
-                                            ?>
-                                        <?php endif; ?>
-
-                                    </div><!-- .widget-area -->
-
-
-                                </div>
-
-
+                        
 
                             <?php } ?>
 
