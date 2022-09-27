@@ -107,7 +107,7 @@ function ti_custom_javascript()
 
             }
         </style>
-<?php
+    <?php
     }
 }
 add_action('wp_footer', 'ti_custom_javascript');
@@ -145,3 +145,23 @@ function mmn_main_item_rewrite($items, $args)
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'mmn_main_item_rewrite', 1, 2);
+
+
+function my_form_search($language = "pt-BR")
+{
+
+    ?>
+
+    <form style="display: none;" role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+        <label>
+            <span class="screen-reader-text"><?php echo _x('Search for:', 'label') ?></span>
+            <input type="search" class="search-field" placeholder="<?php echo esc_attr_x('Search …', 'placeholder') ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x('Search for:', 'label') ?>" />
+        </label>
+        <input type="submit" class="search-submit" value="<?php echo esc_attr_x('Search', 'submit button') ?>" />
+    </form>
+
+<?php
+
+}
+
+add_action('my_form_search', 'my_form_search', 10, 2);
