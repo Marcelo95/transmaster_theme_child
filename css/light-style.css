@@ -305,7 +305,7 @@ div#preloader2 {
     width: 100px;
     margin: 0 auto;
     height: 2px;
-    background: #f5f5f5;
+    background: #00aeef !important;
     position: relative;
     margin-bottom: 20px;
 }
