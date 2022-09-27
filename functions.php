@@ -79,7 +79,7 @@ function pointcom_carregando_scripts()
 add_action('wp_enqueue_scripts', 'pointcom_carregando_scripts');
 
 function ti_custom_javascript() {
-    if (is_home ()) { 
+    if (is_home() || is_front_page()) { 
       ?>
           <script type="text/javascript">
             jQuery("document").ready(function(){
