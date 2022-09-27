@@ -164,24 +164,27 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                                 <div class="col-md-3">
 
-                                    <?php if (is_active_sidebar('sidebar-english')) : ?>
-
-                                        <div id="widget-area" class="  margin-b-40">
-
-                                            <div class="box-right">
-                                                <?php do_action('my_form_search', 'pt-BR'); ?>
-                                                <br>
-                                                <?php do_action('my_posts_recents', 'pt-BR'); ?>
-                                                <?php do_action('my_categories', 'pt-BR'); ?>
-                                            </div>
 
 
+                                    <div id="widget-area" class="  margin-b-40">
 
-                                            <?php //dynamic_sidebar('sidebar-english'); ?>
+                                        <div class="box-right">
+                                            <?php do_action('my_form_search', 'pt-BR'); ?>
+                                            <br>
+                                            <?php do_action('my_posts_recents', 'pt-BR'); ?>
+                                            <?php do_action('my_categories', 'pt-BR'); ?>
+                                        </div>
 
-                                        </div><!-- .widget-area -->
 
-                                    <?php endif; ?>
+
+                                        <?php if (is_active_sidebar('sidebar-english')) : ?>
+                                            <?php //dynamic_sidebar('sidebar-english'); 
+                                            ?>
+                                        <?php endif; ?>
+
+                                    </div><!-- .widget-area -->
+
+
                                 </div>
 
 
