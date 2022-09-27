@@ -156,7 +156,7 @@ function my_form_search($language = "pt-BR")
         <div class="wp-block-search__inside-wrapper " style="width: 666px">
             <input type="hidden" name="lang" value="<?php echo $language; ?>">
             <input type="search" class="wp-block-search__input " placeholder="<?php echo esc_attr_x('', 'placeholder') ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x('Search for:', 'label') ?>" />
-            <input type="submit" class="wp-block-search__button  " value="Pesquisar" />
+            <input type="submit" class="wp-block-search__button  " value="<?php echo $language == "en" ? "Search" : "Pesquisar"; ?>" />
         </div>
     </form>
 <?php
@@ -170,7 +170,7 @@ function my_posts_recents($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
-        <h4 class="widget-title">Posts Recents
+        <h4 class="widget-title"> <?php echo $language == "en" ? "Posts Recents" : "Posts Recentes"; ?>
             <div class="border-width"></div>
             <div class="space-10"></div>
         </h4>
@@ -208,7 +208,7 @@ function my_categories($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
-        <h4 class="widget-title">Categories
+        <h4 class="widget-title"><?php echo $language == "en" ? "Categories" : "Categorias"; ?>
             <div class="border-width"></div>
             <div class="space-10"></div>
         </h4>

@@ -160,7 +160,15 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                             </div>
 
-                            <?php if (ot_get_option('nt_amaze_bloglayout') == 'right-sidebar' || ot_get_option('nt_amaze_bloglayout') == '') { ?>
+                            <?php if (ot_get_option('nt_amaze_bloglayout') == 'right-sidebar' || ot_get_option('nt_amaze_bloglayout') == '') { 
+                                
+                                    $language = 'pt-BR';
+
+                                    if($parent_slug === 'en'){
+                                        $language = 'en';
+                                    }
+
+                                ?>
 
                                 <div class="col-md-3">
 
@@ -169,10 +177,10 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
                                     <div id="widget-area" class="  margin-b-40">
 
                                         <div class="box-right">
-                                            <?php do_action('my_form_search', 'pt-BR'); ?>
+                                            <?php do_action('my_form_search', $language); ?>
                                             <br>
-                                            <?php do_action('my_posts_recents', 'pt-BR'); ?>
-                                            <?php do_action('my_categories', 'pt-BR'); ?>
+                                            <?php do_action('my_posts_recents', $language); ?>
+                                            <?php do_action('my_categories', $language); ?>
                                         </div>
 
 
