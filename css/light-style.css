@@ -876,6 +876,18 @@ div#contact {
     padding-top: 153px;
 }
 
+.contact-details.background-image:before {
+    content: '';
+    background-repeat: no-repeat;
+    min-height: 362px;
+    width: 221px;
+    position: relative;
+    float: left;
+    background-size: contain;
+    margin-right: 32px;
+}
+
+
 @media (min-width: 768px) {
     .services-list li:nth-child(1) {
         border-right: 1px solid #eee;

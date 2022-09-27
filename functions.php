@@ -1,7 +1,7 @@
 <?php
 
 
-define('VERSION', "2.3.0.1");
+define('VERSION', "2.3.0.2");
 define('CHILD_NT_AMAZE_INC', get_stylesheet_directory_uri());
 define('CHILD_NTAMAZE_CSS', get_stylesheet_directory_uri());
 define('CHILD_NTAMAZE_JS',  get_stylesheet_directory_uri());
@@ -77,6 +77,21 @@ function pointcom_carregando_scripts()
     wp_enqueue_script('template-custom', CHILD_NTAMAZE_JS . '/js/template-custom.js', array('jquery'), VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'pointcom_carregando_scripts');
+
+function ti_custom_javascript() {
+    if (is_home ()) { 
+      ?>
+          <script type="text/javascript">
+            jQuery("document").ready(function(){
+                jQuery(".contact-details")
+                .css('background-image', 'url(" CHILD_NTAMAZE_CSS ./imgs/loja1.jpg ")')
+                .addClass("background-image"); 
+            });    
+          </script>
+      <?php
+    }
+  }
+  add_action('wp_footer', 'ti_custom_javascript');
 
 function get_url_page_translate($path = "/")
 {
