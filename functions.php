@@ -19,10 +19,10 @@
         */
 
 
-define('VERSION', "2.3.7");
-// define('NT_AMAZE_INC', get_stylesheet_directory_uri());
-// define('NTAMAZE_CSS', get_stylesheet_directory_uri());
-// define('NTAMAZE_JS',  get_stylesheet_directory_uri());
+define('VERSION', "2.3.6");
+define('CHILD_NT_AMAZE_INC', get_stylesheet_directory_uri());
+define('CHILD_NTAMAZE_CSS', get_stylesheet_directory_uri());
+define('CHILD_NTAMAZE_JS',  get_stylesheet_directory_uri());
 
 
 function ntamaze_child_enqueue_styles()
@@ -71,7 +71,7 @@ function pointcom_carregando_scripts()
 
     // Template-custom js
     wp_deregister_script('template-custom');
-    wp_enqueue_script('template-custom', NTAMAZE_JS . '/js/template-custom.js', array('jquery'), VERSION, true);
+    wp_enqueue_script('template-custom', CHILD_NTAMAZE_JS . '/js/template-custom.js', array('jquery'), VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'pointcom_carregando_scripts');
 
