@@ -179,22 +179,22 @@ function my_posts_recents($language = "pt-BR")
             <ul class="wp-block-categories-list wp-block-categories">
                 <?php
 
-                $cats_includes='';
-                $cats_excludes='';
                 $category_id = get_cat_ID('english');
+        
+
+                $array_query = array(
+                    'numberposts' => 4, // Number of recent posts thumbnails to display
+                    'post_status' => 'publish', // Show only the published posts,
+                );
+
                 if ($language == 'en') { 
-                    $cats_includes = $category_id;
+                    $array_query["category_name"] = "english";
                 } else {
-                    $cats_excludes = $category_id;
+                    $array_query["category__not_in"] = $category_id ;
                 }
 
 
-                $recent_posts = wp_get_recent_posts(array(
-                    'numberposts' => 4, // Number of recent posts thumbnails to display
-                    'post_status' => 'publish', // Show only the published posts,
-                    'include' => $cats_includes,
-                    'exclude' => $cats_excludes,
-                ));
+                $recent_posts = wp_get_recent_posts($array_query);
                 foreach ($recent_posts as $recent) {
                     printf(
                         '<li class="cat-item cat-item-30 current-cat"><a href="%1$s">%2$s</a></li>',
