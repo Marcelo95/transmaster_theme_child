@@ -42,6 +42,7 @@
                 jQuery('.navbar-transparent').removeClass('shrink');
             }
         });
+
         
         //smooth scroll
         jQuery(function () {
