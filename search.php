@@ -19,6 +19,17 @@ if (isset($_GET['lang'])){
 }
 
 
+if ( $language == 'en') {
+    query_posts('category_name=english');
+} else {
+
+    $category_id = get_cat_ID('english');
+    query_posts([
+        'category__not_in' => $category_id
+    ]);
+}
+
+
 ?>
 
 
@@ -124,7 +135,7 @@ if (isset($_GET['lang'])){
 
 	<div class="container">
 
-		<h4 class=""> <?php echo $language == "en" ? "Results" : "Resultados encontrado:"; ?>  
+		<h4 class=""> <?php echo $language == "en" ? "Results:" : "Resultados encontrado:"; ?>  
 			<div class="border-width"></div>
 			<div class="space-10"></div>
 		</h4>
