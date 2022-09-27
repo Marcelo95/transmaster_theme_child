@@ -18,7 +18,7 @@
         * @link https://codex.wordpress.org/Child_Themes
         */
 
-$version = "2.3.3";
+$version = "2.3.4";
 function ntamaze_child_enqueue_styles()
 {
     wp_enqueue_style(
