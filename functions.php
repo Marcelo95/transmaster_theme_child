@@ -78,21 +78,27 @@ function pointcom_carregando_scripts()
 }
 add_action('wp_enqueue_scripts', 'pointcom_carregando_scripts');
 
-function ti_custom_javascript() {
-    if (is_home() || is_front_page()) { 
-      ?>
-          <script type="text/javascript">
-            console.log("add bg")
-            jQuery("document").ready(function(){
-                jQuery(".contact-details")
-                .css('background-image', "url('<?php echo CHILD_NTAMAZE_CSS; ?>/imgs/loja1.jpg')")
-                .addClass("background-image"); 
-            });    
-          </script>
-      <?php
+function ti_custom_javascript()
+{
+    if (is_home() || is_front_page()) {
+?>
+        <style>
+            .contact-details:before {
+                content: '';
+                background-repeat: no-repeat;
+                background-image: url('<?php echo CHILD_NTAMAZE_CSS; ?>/imgs/loja1.jpg');
+                min-height: 362px;
+                width: 221px;
+                position: relative;
+                float: left;
+                background-size: contain;
+                margin-right: 32px;
+            }
+        </style>
+<?php
     }
-  }
-  add_action('wp_footer', 'ti_custom_javascript');
+}
+add_action('wp_footer', 'ti_custom_javascript');
 
 function get_url_page_translate($path = "/")
 {
