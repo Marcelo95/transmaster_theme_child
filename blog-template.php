@@ -171,9 +171,11 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
                                             <div style="display: none;">
                                                 <?php do_action('my_form_search', 'pt-BR'); ?>
                                                 <br>
+                                                <?php do_action('my_posts_recents', 'pt-BR'); ?>
+                                                <?php do_action('my_categories', 'pt-BR'); ?>
                                             </div>
 
-                                            
+
 
                                             <?php dynamic_sidebar('sidebar-english'); ?>
 

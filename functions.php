@@ -147,6 +147,7 @@ function mmn_main_item_rewrite($items, $args)
 add_filter('wp_nav_menu_objects', 'mmn_main_item_rewrite', 1, 2);
 
 
+add_action('my_form_search', 'my_form_search', 10, 2);
 function my_form_search($language = "pt-BR")
 {
 
@@ -162,4 +163,52 @@ function my_form_search($language = "pt-BR")
 
 }
 
-add_action('my_form_search', 'my_form_search', 10, 2);
+
+add_action('my_posts_recents', 'my_posts_recents', 10, 2);
+function my_posts_recents($language = "pt-BR")
+{
+
+?>
+    <div id="my_posts_recents">
+        <h4 class="">Posts Recents<p></p>
+            <div class="border-width"></div>
+            <div class="space-10"></div>
+        </h4>
+
+        <div class="sidebar-widget">
+            <ul class="wp-block-latest-posts__list wp-block-latest-posts">
+                <li><a class="wp-block-latest-posts__post-title" href="http://transmaster.com.br/novo/afinal-trabalhar-com-agencias-e-umbicho-de-sete-cabecas-2/">Working with agencies is a seven-headed beast?</a></li>
+                <li><a class="wp-block-latest-posts__post-title" href="http://transmaster.com.br/novo/afinal-trabalhar-com-agencias-e-umbicho-de-sete-cabecas/">Afinal, trabalhar com agências é um<br>bicho de sete cabeças?</a></li>
+            </ul>
+        </div>
+    </div>
+
+<?php
+
+}
+
+
+add_action('my_categories', 'my_categories', 10, 2);
+function my_categories($language = "pt-BR")
+{
+
+?>
+    <div id="my_posts_recents">
+        <h4 class="">Posts Recents<p></p>
+            <div class="border-width"></div>
+            <div class="space-10"></div>
+        </h4>
+
+        <div class="sidebar-widget">
+            <ul class="wp-block-categories-list wp-block-categories">
+                <li class="cat-item cat-item-30 current-cat"><a aria-current="page" href="http://transmaster.com.br/novo/category/english/">English</a>
+                </li>
+                <li class="cat-item cat-item-1"><a href="http://transmaster.com.br/novo/category/sem-categoria/">Sem categoria</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<?php
+
+}
