@@ -51,7 +51,7 @@
                     target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
                         jQuery('html, body').animate({
-                            scrollTop: target.offset().top
+                            scrollTop: Math.max(target.offset().top - jQuery("nav.navbar.navbar-default.navbar-fixed-top").height(), 0)
                         }, 1000);
                         return false;
                     }
