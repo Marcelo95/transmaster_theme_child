@@ -162,20 +162,27 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                             <?php if (ot_get_option('nt_amaze_bloglayout') == 'right-sidebar' || ot_get_option('nt_amaze_bloglayout') == '') { ?>
 
-   
+                                <div class="col-md-3">
 
-                                <?php if (is_active_sidebar('sidebar-english')) : ?>
+                                    <?php if (is_active_sidebar('sidebar-english')) : ?>
 
-                                    <div id="widget-area" class="col-md-3 widget-area margin-b-40">
+                                        <div id="widget-area" class="  margin-b-40">
 
-                                        <?php do_action( 'my_form_search'); ?>
-                                        <br>
+                                            <div style="display: none;">
+                                                <?php do_action('my_form_search', 'pt-BR'); ?>
+                                                <br>
+                                            </div>
 
-                                        <?php dynamic_sidebar('sidebar-english'); ?>
+                                            
 
-                                    </div><!-- .widget-area -->
+                                            <?php dynamic_sidebar('sidebar-english'); ?>
 
-                                <?php endif; ?>
+                                        </div><!-- .widget-area -->
+
+                                    <?php endif; ?>
+                                </div>
+
+
 
                             <?php } ?>
 
