@@ -170,15 +170,29 @@ function my_posts_recents($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
-        <h4 class="">Posts Recents<p></p>
+        <h4 class="widget-title">Posts Recents
             <div class="border-width"></div>
             <div class="space-10"></div>
         </h4>
 
         <div class="sidebar-widget">
             <ul class="wp-block-latest-posts__list wp-block-latest-posts">
-                <li><a class="wp-block-latest-posts__post-title" href="http://transmaster.com.br/novo/afinal-trabalhar-com-agencias-e-umbicho-de-sete-cabecas-2/">Working with agencies is a seven-headed beast?</a></li>
-                <li><a class="wp-block-latest-posts__post-title" href="http://transmaster.com.br/novo/afinal-trabalhar-com-agencias-e-umbicho-de-sete-cabecas/">Afinal, trabalhar com agências é um<br>bicho de sete cabeças?</a></li>
+
+                <?php
+                $categories = get_categories(array(
+                    'orderby' => 'name',
+                    'parent'  => 0
+                ));
+
+                foreach ($categories as $category) {
+                    printf(
+                        '<li><a href="%1$s" class="wp-block-latest-posts__post-title">%2$s</a></li>',
+                        esc_url(get_category_link($category->term_id)),
+                        esc_html($category->name)
+                    );
+                }
+                ?>
+
             </ul>
         </div>
     </div>
@@ -194,17 +208,26 @@ function my_categories($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
-        <h4 class="">Posts Recents<p></p>
+        <h4 class="widget-title">Categories
             <div class="border-width"></div>
             <div class="space-10"></div>
         </h4>
 
         <div class="sidebar-widget">
             <ul class="wp-block-categories-list wp-block-categories">
-                <li class="cat-item cat-item-30 current-cat"><a aria-current="page" href="http://transmaster.com.br/novo/category/english/">English</a>
-                </li>
-                <li class="cat-item cat-item-1"><a href="http://transmaster.com.br/novo/category/sem-categoria/">Sem categoria</a>
-                </li>
+                <?php
+                $recent_posts = wp_get_recent_posts(array(
+                    'numberposts' => 4, // Number of recent posts thumbnails to display
+                    'post_status' => 'publish' // Show only the published posts
+                ));
+                foreach ($recent_posts as $recent) {
+                    printf(
+                        '<li class="cat-item cat-item-30 current-cat"><a href="%1$s">%2$s</a></li>',
+                        esc_url(get_permalink($recent['ID'])),
+                        apply_filters('the_title', $recent['post_title'], $recent['ID'])
+                    );
+                }
+                ?>
             </ul>
         </div>
     </div>
