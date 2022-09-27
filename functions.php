@@ -170,7 +170,7 @@ function my_posts_recents($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
-        <h4 class="widget-title"><?php echo $language == "en" ? "Categories" : "Categorias"; ?>
+        <h4 class="widget-title"> <?php echo $language == "en" ? "Posts Recents" : "Posts Recentes"; ?>
             <div class="border-width"></div>
             <div class="space-10"></div>
         </h4>
@@ -207,7 +207,7 @@ function my_categories($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
-        <h4 class="widget-title"> <?php echo $language == "en" ? "Posts Recents" : "Posts Recentes"; ?>
+        <h4 class="widget-title">  <?php echo $language == "en" ? "Categories" : "Categorias"; ?>
             <div class="border-width"></div>
             <div class="space-10"></div>
         </h4>
