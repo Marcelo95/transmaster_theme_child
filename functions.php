@@ -18,20 +18,26 @@
         * @link https://codex.wordpress.org/Child_Themes
         */
 
-$version = "2.3.4";
+
+define('VERSION', "2.3.5");
+define('NT_AMAZE_INC', get_template_directory());
+define('NTAMAZE_CSS', get_template_directory_uri());
+define('NTAMAZE_JS',  get_template_directory_uri());
+
+
 function ntamaze_child_enqueue_styles()
 {
     wp_enqueue_style(
         'nt-amaze-child-style',
         get_stylesheet_directory_uri() . '/style.css',
         false,
-        $version
+        VERSION
     );
     wp_enqueue_style(
         'nt-amaze-child-style-2',
         get_stylesheet_directory_uri() . '/css/light-style.css',
         false,
-        $version
+        VERSION
     );
 }
 
@@ -44,9 +50,9 @@ function my_register_sidebars()
     /* Register the 'primary' sidebar. */
     register_sidebar(
         array(
-            'name' => esc_html__( 'Blog Sidebar English', 'nt-amaze' ),
+            'name' => esc_html__('Blog Sidebar English', 'nt-amaze'),
             'id' => 'sidebar-english',
-            'description' => esc_html__( 'These are widgets for the Blog page.','nt-amaze' ),
+            'description' => esc_html__('These are widgets for the Blog page.', 'nt-amaze'),
             'before_widget' => '<div class="sidebar-widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class="widget-title">',
@@ -60,44 +66,45 @@ function my_register_sidebars()
 function pointcom_carregando_scripts()
 {
 
-    wp_enqueue_script( 'pointcom_maskJS' , get_stylesheet_directory_uri() . '/js/masks_jquery.js' , array( 'jquery' ), '2', true );
-    wp_enqueue_script( 'pointcom_mask' , get_stylesheet_directory_uri() . '/js/mask.js' , array( 'jquery' ), '1', true );
+    wp_enqueue_script('pointcom_maskJS', get_stylesheet_directory_uri() . '/js/masks_jquery.js', array('jquery'), VERSION, true);
+    wp_enqueue_script('pointcom_mask', get_stylesheet_directory_uri() . '/js/mask.js', array('jquery'), VERSION, true);
 
     // Template-custom js
-    wp_deregister_script( 'template-custom' );
-	wp_enqueue_script( 'template-custom', NTAMAZE_JS . '/js/template-custom.js', array('jquery'), '1.1', true);
-
+    wp_deregister_script('template-custom');
+    wp_enqueue_script('template-custom', NTAMAZE_JS . '/js/template-custom.js', array('jquery'), VERSION, true);
 }
-add_action( 'wp_enqueue_scripts' , 'pointcom_carregando_scripts' );
+add_action('wp_enqueue_scripts', 'pointcom_carregando_scripts');
 
-function get_url_page_translate($path = "/"){
+function get_url_page_translate($path = "/")
+{
     $url = home_url($path);
 
 
-    if(!is_home() && !is_front_page() && !is_page("en")){
-        $url .= get_post_field( 'post_name', get_post() );
+    if (!is_home() && !is_front_page() && !is_page("en")) {
+        $url .= get_post_field('post_name', get_post());
     }
 
     return $url;
 }
 
-function replace_url_menu($url){
-
-    if(strpos($url, get_home_url()) === false){
-        $url = str_replace( '/novo', get_home_url(), $url );
-    }
-
-    return $url;
-}
-
-
-function mmn_main_item_rewrite( $items, $args ) 
+function replace_url_menu($url)
 {
-    foreach ( $items as $key => $item ) {
+
+    if (strpos($url, get_home_url()) === false) {
+        $url = str_replace('/novo', get_home_url(), $url);
+    }
+
+    return $url;
+}
+
+
+function mmn_main_item_rewrite($items, $args)
+{
+    foreach ($items as $key => $item) {
 
         $item->url = replace_url_menu($item->url);
     }
 
     return $items;
-} 
-add_filter( 'wp_nav_menu_objects', 'mmn_main_item_rewrite', 1, 2 );
+}
+add_filter('wp_nav_menu_objects', 'mmn_main_item_rewrite', 1, 2);
