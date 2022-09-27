@@ -178,9 +178,22 @@ function my_posts_recents($language = "pt-BR")
         <div class="sidebar-widget">
             <ul class="wp-block-categories-list wp-block-categories">
                 <?php
+
+                $cats_includes='';
+                $cats_excludes='';
+                $category_id = get_cat_ID('english');
+                if ($language == 'en') { 
+                    $cats_includes = $category_id;
+                } else {
+                    $cats_excludes = $category_id;
+                }
+
+
                 $recent_posts = wp_get_recent_posts(array(
                     'numberposts' => 4, // Number of recent posts thumbnails to display
-                    'post_status' => 'publish' // Show only the published posts
+                    'post_status' => 'publish', // Show only the published posts,
+                    'include' => $cats_includes,
+                    'exclude' => $cats_excludes,
                 ));
                 foreach ($recent_posts as $recent) {
                     printf(
@@ -207,7 +220,7 @@ function my_categories($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
-        <h4 class="widget-title">  <?php echo $language == "en" ? "Categories" : "Categorias"; ?>
+        <h4 class="widget-title"> <?php echo $language == "en" ? "Categories" : "Categorias"; ?>
             <div class="border-width"></div>
             <div class="space-10"></div>
         </h4>
@@ -240,24 +253,24 @@ function my_categories($language = "pt-BR")
 
 add_action('my_custom_html_right', 'my_custom_html_right', 10, 2);
 
-function my_custom_html_right($language="pt-BR")
+function my_custom_html_right($language = "pt-BR")
 {
 ?>
 
-        <div class="col-md-3">
-            <div id="widget-area" class="  margin-b-40">
+    <div class="col-md-3">
+        <div id="widget-area" class="  margin-b-40">
 
-                <div class="box-right">
-                    <?php do_action('my_form_search', $language); ?>
-                    <br>
-                    <?php do_action('my_posts_recents', $language); ?>
-                    <?php do_action('my_categories', $language); ?>
-                </div>
-                <?php if (is_active_sidebar('sidebar-english')) : ?>
-                    <?php //dynamic_sidebar('sidebar-english'); 
-                    ?>
-                <?php endif; ?>
-            </div><!-- .widget-area -->
-        </div>
+            <div class="box-right">
+                <?php do_action('my_form_search', $language); ?>
+                <br>
+                <?php do_action('my_posts_recents', $language); ?>
+                <?php do_action('my_categories', $language); ?>
+            </div>
+            <?php if (is_active_sidebar('sidebar-english')) : ?>
+                <?php //dynamic_sidebar('sidebar-english'); 
+                ?>
+            <?php endif; ?>
+        </div><!-- .widget-area -->
+    </div>
 <?php
 }
