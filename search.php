@@ -10,6 +10,16 @@ $nt_amaze_menu_sticky = ot_get_option('nt_amaze_menu_sticky');
 
 ?>
 
+<?php
+
+$language = 'pt-BR';
+
+if (isset($_GET['lang'])){
+    $language = $_GET['lang'];
+}
+
+
+?>
 
 
 <?php if ($nt_amaze_menu_sticky == 'top' || $nt_amaze_menu_sticky == 'topstatic') : ?>
@@ -114,7 +124,8 @@ $nt_amaze_menu_sticky = ot_get_option('nt_amaze_menu_sticky');
 
 	<div class="container">
 
-		<h4 class="">Resultados encontrado:<div class="border-width"></div>
+		<h4 class=""> <?php echo $language == "en" ? "Results" : "Resultados encontrado:"; ?>  
+			<div class="border-width"></div>
 			<div class="space-10"></div>
 		</h4>
 
@@ -174,7 +185,7 @@ $nt_amaze_menu_sticky = ot_get_option('nt_amaze_menu_sticky');
 
 						<?php if ($nt_amaze_searchlayout == 'right-sidebar' || $nt_amaze_searchlayout == '') { ?>
 
-							<?php get_sidebar(); ?>
+							<?php  do_action('my_custom_html_right', $language); ?>
 
 						<?php } ?>
 
