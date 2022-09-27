@@ -118,7 +118,7 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                         <?php if (is_active_sidebar('sidebar-english')) : ?>
 
-                            <div id="widget-area" class="col-md-3 widget-area margin-b-40">
+                            <div id="widget-area" class="col-md-3 widget-area margin-b-40 v3">
 
                                 <?php dynamic_sidebar('sidebar-english'); ?>
 
@@ -229,7 +229,7 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                             <?php if (is_active_sidebar('sidebar-english')) : ?>
 
-                                <div id="widget-area" class="col-md-3 widget-area margin-b-40">
+                                <div id="widget-area" class="col-md-3 widget-area margin-b-40 v1">
 
                                     <?php dynamic_sidebar('sidebar-english'); ?>
 
@@ -287,7 +287,7 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                                         <?php if (is_active_sidebar('sidebar-english')) : ?>
 
-                                            <div id="widget-area" class="col-md-3 widget-area margin-b-40">
+                                            <div id="widget-area" class="col-md-3 widget-area margin-b-40 v2">
 
                                                 <?php dynamic_sidebar('sidebar-english'); ?>
 
