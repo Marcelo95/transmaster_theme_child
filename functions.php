@@ -84,7 +84,7 @@ function ti_custom_javascript() {
           <script type="text/javascript">
             jQuery("document").ready(function(){
                 jQuery(".contact-details")
-                .css('background-image', 'url(" CHILD_NTAMAZE_CSS ./imgs/loja1.jpg ")')
+                .css('background-image', "url('"+CHILD_NTAMAZE_CSS +"/imgs/loja1.jpg')")
                 .addClass("background-image"); 
             });    
           </script>
