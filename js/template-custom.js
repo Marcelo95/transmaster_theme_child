@@ -43,7 +43,6 @@
             }
         });
 
-        
         //smooth scroll
         jQuery(function () {
             jQuery('.scroll-to a[href*="#"]:not([href="#"])').click(function () {
