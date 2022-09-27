@@ -46,15 +46,12 @@
         //smooth scroll
         jQuery(function () {
             jQuery('.scroll-to a[href*="#"]:not([href="#"])').click(function () {
-                jQuery(".scroll-to li").removeClass("active");
-                jQuery(this).parent().addClass("active");
-
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                     var target = jQuery(this.hash);
                     target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
                         jQuery('html, body').animate({
-                            scrollTop: Math.max(target.offset().top - jQuery("nav.navbar.navbar-default.navbar-fixed-top").height(), 0)
+                            scrollTop: Math.max(target.offset().top
                         }, 1000);
                         return false;
                     }
