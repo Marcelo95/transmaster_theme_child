@@ -14,4 +14,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: "/public_html/novo/wp-content/themes/nt-amaze-child"
+          server-dir: "/public_html/novo/wp-content/themes/nt-amaze-child/"
