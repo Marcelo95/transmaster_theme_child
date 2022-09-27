@@ -896,6 +896,11 @@ body.single span.breadcrumb-current, p.breadcrubms span:last-child span {
     color: #fff !important;
 }
 
+.search-results .post .post-content h3 {
+    padding: 11px 19px;
+    font-size: 18px;
+}
+
 @media (min-width: 768px) {
     .services-list li:nth-child(1) {
         border-right: 1px solid #eee;
