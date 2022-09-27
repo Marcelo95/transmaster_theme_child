@@ -82,9 +82,10 @@ function ti_custom_javascript() {
     if (is_home() || is_front_page()) { 
       ?>
           <script type="text/javascript">
+            console.log("add bg")
             jQuery("document").ready(function(){
                 jQuery(".contact-details")
-                .css('background-image', "url('"+CHILD_NTAMAZE_CSS +"/imgs/loja1.jpg')")
+                .css('background-image', "url('<?php echo CHILD_NTAMAZE_CSS; ?>/imgs/loja1.jpg')")
                 .addClass("background-image"); 
             });    
           </script>
