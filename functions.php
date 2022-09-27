@@ -63,6 +63,10 @@ function pointcom_carregando_scripts()
     wp_enqueue_script( 'pointcom_maskJS' , get_stylesheet_directory_uri() . '/js/masks_jquery.js' , array( 'jquery' ), '2', true );
     wp_enqueue_script( 'pointcom_mask' , get_stylesheet_directory_uri() . '/js/mask.js' , array( 'jquery' ), '1', true );
 
+    // Template-custom js
+    wp_deregister_script( 'template-custom' );
+	wp_enqueue_script( 'template-custom', NTAMAZE_JS . '/js/template-custom.js', array('jquery'), '1.1', true);
+
 }
 add_action( 'wp_enqueue_scripts' , 'pointcom_carregando_scripts' );
 
