@@ -94,6 +94,18 @@ function ti_custom_javascript()
                 background-size: contain;
                 margin-right: 32px;
             }
+
+
+            @media (max-width: 768px) {
+                .contact-details:before {
+                    width: 100%;
+                    margin: 20px auto;
+                    display: block;
+                    float: none;
+                    background-position: center;
+                }
+
+            }
         </style>
 <?php
     }
