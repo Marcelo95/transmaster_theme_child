@@ -170,6 +170,43 @@ function my_posts_recents($language = "pt-BR")
 
 ?>
     <div id="my_posts_recents">
+        <h4 class="widget-title"><?php echo $language == "en" ? "Categories" : "Categorias"; ?>
+            <div class="border-width"></div>
+            <div class="space-10"></div>
+        </h4>
+
+        <div class="sidebar-widget">
+            <ul class="wp-block-categories-list wp-block-categories">
+                <?php
+                $recent_posts = wp_get_recent_posts(array(
+                    'numberposts' => 4, // Number of recent posts thumbnails to display
+                    'post_status' => 'publish' // Show only the published posts
+                ));
+                foreach ($recent_posts as $recent) {
+                    printf(
+                        '<li class="cat-item cat-item-30 current-cat"><a href="%1$s">%2$s</a></li>',
+                        esc_url(get_permalink($recent['ID'])),
+                        apply_filters('the_title', $recent['post_title'], $recent['ID'])
+                    );
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+
+<?php
+
+}
+
+
+
+add_action('my_categories', 'my_categories', 10, 2);
+
+function my_categories($language = "pt-BR")
+{
+
+?>
+    <div id="my_posts_recents">
         <h4 class="widget-title"> <?php echo $language == "en" ? "Posts Recents" : "Posts Recentes"; ?>
             <div class="border-width"></div>
             <div class="space-10"></div>
@@ -193,41 +230,6 @@ function my_posts_recents($language = "pt-BR")
                 }
                 ?>
 
-            </ul>
-        </div>
-    </div>
-
-<?php
-
-}
-
-
-add_action('my_categories', 'my_categories', 10, 2);
-function my_categories($language = "pt-BR")
-{
-
-?>
-    <div id="my_posts_recents">
-        <h4 class="widget-title"><?php echo $language == "en" ? "Categories" : "Categorias"; ?>
-            <div class="border-width"></div>
-            <div class="space-10"></div>
-        </h4>
-
-        <div class="sidebar-widget">
-            <ul class="wp-block-categories-list wp-block-categories">
-                <?php
-                $recent_posts = wp_get_recent_posts(array(
-                    'numberposts' => 4, // Number of recent posts thumbnails to display
-                    'post_status' => 'publish' // Show only the published posts
-                ));
-                foreach ($recent_posts as $recent) {
-                    printf(
-                        '<li class="cat-item cat-item-30 current-cat"><a href="%1$s">%2$s</a></li>',
-                        esc_url(get_permalink($recent['ID'])),
-                        apply_filters('the_title', $recent['post_title'], $recent['ID'])
-                    );
-                }
-                ?>
             </ul>
         </div>
     </div>
