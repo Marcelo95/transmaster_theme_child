@@ -106,6 +106,10 @@ h6 {
     font-weight: 700;
 }
 
+h4.widget-title {
+    color: #00477b !important;
+}
+
 .border-width {
     width: 60px;
     height: 2px;
@@ -1204,7 +1208,7 @@ Blog styles
 }
 
 .post .post-content h3 a {
-    color: #040404;
+    color: #00477b !important;
 }
 
 .post .post-content h3 a:hover {

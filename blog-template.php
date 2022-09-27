@@ -104,6 +104,8 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
     <section class="section-blog">
 
+
+
         <div class="container">
 
             <div class="row">

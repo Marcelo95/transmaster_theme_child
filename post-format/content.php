@@ -38,13 +38,18 @@ $nt_amaze_show_standart_social_icons 	= rwmb_meta('nt_amaze_show_standart_social
 							<?php endif; ?>
 
 							<?php if (has_post_thumbnail()) : ?>
-								<?php
-								$nt_amaze_att = get_post_thumbnail_id();
-								$nt_amaze_image_src = wp_get_attachment_image_src($nt_amaze_att, 'full');
-								$nt_amaze_image_src = $nt_amaze_image_src[0]; ?>
-								<img class="img-responsive" src="<?php echo esc_url($nt_amaze_image_src); ?>" alt="<?php esc_attr(the_title_attribute()); ?>">
-								<?php  ?>
+								<a href="<?php echo esc_url(get_permalink()); ?>">
+									<?php
+									$nt_amaze_att = get_post_thumbnail_id();
+									$nt_amaze_image_src = wp_get_attachment_image_src($nt_amaze_att, 'full');
+									$nt_amaze_image_src = $nt_amaze_image_src[0]; ?>
+									<img class="img-responsive" src="<?php echo esc_url($nt_amaze_image_src); ?>" alt="<?php esc_attr(the_title_attribute()); ?>">
+									<br>
+									<?php  ?>
+								</a>
 							<?php endif; ?>
+
+
 
 							<?php if ($nt_amaze_standart_post_content == 'value1' || $nt_amaze_standart_post_content == '') : ?>
 								<?php
