@@ -51,7 +51,7 @@
                     target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
                         jQuery('html, body').animate({
-                            scrollTop: Math.max(target.offset().top
+                            scrollTop: target.offset().top
                         }, 1000);
                         return false;
                     }
