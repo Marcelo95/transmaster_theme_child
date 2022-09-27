@@ -168,7 +168,7 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
                                         <div id="widget-area" class="  margin-b-40">
 
-                                            <div style="display: none;">
+                                            <div class="box-right">
                                                 <?php do_action('my_form_search', 'pt-BR'); ?>
                                                 <br>
                                                 <?php do_action('my_posts_recents', 'pt-BR'); ?>
@@ -177,7 +177,7 @@ if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
 
 
 
-                                            <?php dynamic_sidebar('sidebar-english'); ?>
+                                            <?php //dynamic_sidebar('sidebar-english'); ?>
 
                                         </div><!-- .widget-area -->
 
