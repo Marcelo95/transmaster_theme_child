@@ -19,10 +19,10 @@
         */
 
 
-define('VERSION', "2.3.6");
-define('NT_AMAZE_INC', get_stylesheet_directory_uri());
-define('NTAMAZE_CSS', get_stylesheet_directory_uri());
-define('NTAMAZE_JS',  get_stylesheet_directory_uri());
+define('VERSION', "2.3.7");
+// define('NT_AMAZE_INC', get_stylesheet_directory_uri());
+// define('NTAMAZE_CSS', get_stylesheet_directory_uri());
+// define('NTAMAZE_JS',  get_stylesheet_directory_uri());
 
 
 function ntamaze_child_enqueue_styles()
