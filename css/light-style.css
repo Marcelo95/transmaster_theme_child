@@ -880,6 +880,9 @@ div#contact {
     padding-top: 153px;
 }
 
+ul.pager {
+    background: none;
+}
 
 @media (min-width: 768px) {
     .services-list li:nth-child(1) {
