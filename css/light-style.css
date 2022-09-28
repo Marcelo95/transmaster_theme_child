@@ -1555,7 +1555,7 @@ Footer styles
 
 .parallax-text h2 {
     color: #fff;
-    font-size: 3.5rem;
+    font-size: 2.5rem !important;
     line-height: 5.5rem;
     font-weight: 400;
     text-transform: capitalize;
@@ -1826,6 +1826,16 @@ Footer styles
         font-size: 2rem;
         line-height: 3.5rem;
     }
+
+    
+.parallax-text p.breadcrubms {
+    display: none;
+}
+
+
+    .single .dzsparallaxer, .page .dzsparallaxer, .archive .dzsparallaxer {
+    margin-top: 0;
+}
 
     .testi-slider p {
         font-size: 1.5rem;
