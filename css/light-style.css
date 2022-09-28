@@ -829,7 +829,9 @@ div#setores_list  .container {
 .btn-coruja {
     max-width: 138px;
     float: right;
-    background: url(http://transmaster.com.br/novo/wp-content/uploads/2022/02/coruja-azul.png) no-repeat !important;
+    background-repeat: no-repeat;
+    /* background-image: url(http://transmaster.com.br/novo/wp-content/uploads/2022/02/coruja-azul.png) !important; */
+    background-color: #fff !important;
     background-size: 14px !important;
     background-position: 8px 44% !important;
     padding-right: 10px !important;
@@ -1350,6 +1352,12 @@ Pagination styles
 
 .single .dzsparallaxer, .page .dzsparallaxer, .archive .dzsparallaxer {margin-top: 104px;}
 
+
+.page-id-337 div#home {
+    margin-top: 142px;
+}
+
+
 /*
 Menu left style  added in v1.3
 */
@@ -1836,6 +1844,11 @@ Footer styles
     .single .dzsparallaxer, .page .dzsparallaxer, .archive .dzsparallaxer {
     margin-top: 0;
 }
+
+    .page-id-337 div#home {
+    margin-top: 0;
+}
+
 
     .testi-slider p {
         font-size: 1.5rem;

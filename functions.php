@@ -1,7 +1,7 @@
 <?php
 
 
-define('VERSION', "2.3.0.8");
+define('VERSION', "2.3.0.9");
 define('CHILD_NT_AMAZE_INC', get_stylesheet_directory_uri());
 define('CHILD_NTAMAZE_CSS', get_stylesheet_directory_uri());
 define('CHILD_NTAMAZE_JS',  get_stylesheet_directory_uri());
@@ -95,6 +95,11 @@ function ti_custom_javascript()
                 margin-right: 32px;
             }
 
+            .btn-coruja {
+                background-image: url('<?php echo CHILD_NTAMAZE_CSS; ?>/imgs/coruja-azul.png') !important;
+            }
+
+
 
             @media (max-width: 768px) {
                 .contact-details:before {
@@ -180,17 +185,17 @@ function my_posts_recents($language = "pt-BR")
                 <?php
 
                 $category_id = get_cat_ID('english');
-        
+
 
                 $array_query = array(
                     'numberposts' => 4, // Number of recent posts thumbnails to display
                     'post_status' => 'publish', // Show only the published posts,
                 );
 
-                if ($language == 'en') { 
+                if ($language == 'en') {
                     $array_query["category_name"] = "english";
                 } else {
-                    $array_query["category__not_in"] = $category_id ;
+                    $array_query["category__not_in"] = $category_id;
                 }
 
 
