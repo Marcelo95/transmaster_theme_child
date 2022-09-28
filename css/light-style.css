@@ -1354,7 +1354,7 @@ Pagination styles
 .single .dzsparallaxer, .page .dzsparallaxer, .archive .dzsparallaxer {margin-top: 104px;}
 
 
-.page-id-337 div#home {
+.page-id-337 div#home, .page-id-347 div#home {
     margin-top: 142px;
 }
 
@@ -1852,7 +1852,7 @@ html .parallax-text h2 {
     margin-top: 0;
 }
 
-    .page-id-337 div#home {
+    .page-id-337 div#home, .page-id-347 div#home {
     margin-top: 0;
 }
 
