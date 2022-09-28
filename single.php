@@ -15,16 +15,6 @@
 global $post;
 $parent_slug = get_post_field('post_name', $post->post_parent);
 
-if (get_post_field('post_name') === 'blog' && $parent_slug === 'en') {
-    query_posts('category_name=english');
-} else {
-
-    $category_id = get_cat_ID('english');
-    query_posts([
-        'category__not_in' => $category_id
-    ]);
-}
-
 
 $language = 'pt-BR';
 
