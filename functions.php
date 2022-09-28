@@ -95,11 +95,6 @@ function ti_custom_javascript()
                 margin-right: 32px;
             }
 
-            .btn-coruja {
-                background-image: url('<?php echo CHILD_NTAMAZE_CSS; ?>/imgs/coruja-azul.png') !important;
-            }
-
-
 
             @media (max-width: 768px) {
                 .contact-details:before {
@@ -116,6 +111,21 @@ function ti_custom_javascript()
     }
 }
 add_action('wp_footer', 'ti_custom_javascript');
+
+
+
+add_action('wp_footer', 'add_css_all_pages');
+function add_css_all_pages()
+{
+    ?>
+    <style>
+        .btn-coruja {
+            background-image: url('<?php echo CHILD_NTAMAZE_CSS; ?>/imgs/coruja-azul.png') !important;
+        }
+    </style>
+<?php
+}
+
 
 function get_url_page_translate($path = "/")
 {
@@ -156,7 +166,7 @@ add_action('my_form_search', 'my_form_search', 10, 2);
 function my_form_search($language = "pt-BR")
 {
 
-    ?>
+?>
     <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
         <div class="wp-block-search__inside-wrapper " style="width: 666px">
             <input type="hidden" name="lang" value="<?php echo $language; ?>">
