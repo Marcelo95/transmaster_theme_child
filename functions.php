@@ -1,7 +1,7 @@
 <?php
 
 
-define('VERSION', "2.3.1.0");
+define('VERSION', "2.3.1.1");
 define('CHILD_NT_AMAZE_INC', get_stylesheet_directory_uri());
 define('CHILD_NTAMAZE_CSS', get_stylesheet_directory_uri());
 define('CHILD_NTAMAZE_JS',  get_stylesheet_directory_uri());
