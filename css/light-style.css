@@ -829,7 +829,7 @@ div#setores_list  .container {
 .btn-coruja {
     max-width: 138px;
     float: right;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     /* background-image: url(http://transmaster.com.br/novo/wp-content/uploads/2022/02/coruja-azul.png) !important; */
     background-color: #fff !important;
     background-size: 14px !important;
