@@ -1347,6 +1347,9 @@ Pagination styles
     background: #1abc9c;
 }
 
+
+.single .dzsparallaxer, .page .dzsparallaxer, .archive .dzsparallaxer {margin-top: 104px;}
+
 /*
 Menu left style  added in v1.3
 */
