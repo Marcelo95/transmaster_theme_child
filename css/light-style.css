@@ -862,6 +862,7 @@ section#hide-header-section .col-sm-12.scrollReveal.sr-bottom, section#hide-head
 
 a.breadcrumb-item, p.breadcrubms span a, p.breadcrubms {
     color: #fff !important;
+    display: none;
 }
 
 
@@ -1561,12 +1562,12 @@ Footer styles
     color: #1abc9c;
 }
 
-.parallax-text h2 {
+html .parallax-text h2 {
     color: #fff;
-    font-size: 2.5rem !important;
-    line-height: 5.5rem;
+    font-size: 3.5rem !important;
+    line-height: 3.5rem !important;
     font-weight: 400;
-    text-transform: capitalize;
+    text-transform: none !important;
     font-family: "Raleway", sans-serif;
 }
 
@@ -1818,6 +1819,12 @@ Footer styles
 }
 
 @media (max-width: 767px) {
+
+    html .parallax-text h2 {
+        font-size: 2.5rem !important;
+        line-height: 2.6rem !important;
+    }
+    
     .hero-static h1 {
         font-size: 3rem;
     }
