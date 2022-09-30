@@ -904,6 +904,13 @@ body.single span.breadcrumb-current, p.breadcrubms span:last-child span {
     font-size: 18px;
 }
 
+.vc_gitem_row .vc_icon_element {
+    background: #63cdf59c;
+    padding: 29%;
+    margin: auto;
+}
+
+
 @media (min-width: 768px) {
     .services-list li:nth-child(1) {
         border-right: 1px solid #eee;
