@@ -1998,6 +1998,36 @@ a.navbar-brand.nt-main-logo {
     display: none !important;
 }
 
+.my-grade .vc_gitem_row .vc_gitem-col {
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #00aeefb8 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.my-grade .vc_gitem-zone-a .vc_gitem-row-position-bottom, .vc_gitem-zone-b .vc_gitem-row-position-bottom {
+    top: 0;
+    display: flex;
+}
+
+
+
+.my-grade .vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_title * {
+    text-align: center !important;
+}
+
+
+.my-grade .vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_title {
+    margin: 0;
+}
+
+.my-grade .vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .top-bar {position: relative !important;/* background: #0f94d4; */text-align: center;display: none;}
 
